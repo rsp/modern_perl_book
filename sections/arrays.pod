@@ -44,7 +44,7 @@ number of elements it contains:
     my $num_cats = @cats;
 
     # string concatenation
-    say 'I have ' . @cats ' cats!';
+    say 'I have ' . @cats . ' cats!';
 
     # addition
     my $num_animals = @cats + @dogs + @fish;

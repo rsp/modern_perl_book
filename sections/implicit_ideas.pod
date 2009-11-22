@@ -63,6 +63,19 @@ matches, substitutions, and transliterations:
 
 Check how many other string functions this includes?
 
+From perlvar manpage:
+abs, alarm, chomp, chop, chr, chroot, cos, defined, eval,
+exp, glob, hex, int, lc, lcfirst, length, log, lstat, mkdir,
+oct, ord, pos, print, quotemeta, readlink, readpipe, ref,
+require, reverse (in scalar context only), rmdir, sin, split
+(on its second argument), sqrt, stat, study, uc, ucfirst,
+unlink, unpack
+All file tests except for -t
+m//, s///, tr///, y///
+for, foreach, grep, map
+given
+<FH> operator in while test
+
 =end for
 
 Many (most?) of Perl's scalar operators work on the default scalar variable if you do not provide an alternative.

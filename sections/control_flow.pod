@@ -8,9 +8,9 @@ file executed) and continues to the end:
 
 =begin programlisting
 
-    say 'At start'
-    say 'In middle'
-    say 'At end'
+    say 'At start';
+    say 'In middle';
+    say 'At end';
 
 =end programlisting
 
@@ -329,9 +329,9 @@ boolean results when evaluated, Perl coerces the results of other expressions
 -- including variables and values -- into boolean forms.
 
 Thus these operators provide a boolean context.  Empty hashes and arrays
-evaluate to false.  Scalars containing C<undef>, the values 0 and 0.0, and the
-empty string evaluate to false.  Everything else is true, in the absence of
-deeper magic.
+evaluate to false.  Scalars containing C<undef>, the numbers 0 and 0.0, and the
+empty string and string "0" (but not "0.0" or "00" or "0\n") evaluate to false.
+Everything else is true, in the absence of deeper magic.
 
 =for author
 
@@ -359,7 +359,7 @@ C<looping directives; for>
 C<looping directives; foreach>
 
 The I<foreach> style loop evaluates an expression and executes a statement or
-block until the expression evaluates to a false value:
+block once for every value of a list:
 
 =begin programlisting
 
@@ -438,7 +438,7 @@ iteration:
 
     my @nums = 1 .. 10;
 
-    $_ ^ 2 for @nums;
+    $_ **= 2 for @nums;
 
     is( $nums[0],   1, '1 * 1 is 1' );
     is( $nums[1],   2, '2 * 2 is 4' );
@@ -455,7 +455,7 @@ This aliasing also works with the block style foreach loop:
 
     for my $num (@nums)
     {
-        $num ^= 2;
+        $num **= 2;
     }
 
 =end programlisting
@@ -467,7 +467,7 @@ This aliasing also works with the block style foreach loop:
 
     for (@nums)
     {
-        $_ *= 2;
+        $_ **= 2;
     }
 
 =end programlisting
@@ -1044,5 +1044,10 @@ algorithms tractable.
 
 Check Ruslan Zakirov's tailcall module for maturity and applicability here; it
 won't be core, but it may be worth mentioning.
+
+Also:
+@_ = ($x,$y); goto &fun;
+instead of:
+return f($x,$y);
 
 =end for

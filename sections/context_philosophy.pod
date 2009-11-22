@@ -20,7 +20,7 @@ Likewise, certain contexts make it clear that you expect a numeric value, or a
 value that's either true or false.
 
 Context can be tricky if you try to write or read Perl code as a series of
-single expressions standing apart from from their environment.  You may find
+single expressions standing apart from their environment.  You may find
 yourself slapping your forehead after a long debugging session only to find
 that your assumptions about context were incorrect.
 
@@ -61,7 +61,7 @@ scalar and a temporary array, and then throwing away the array:
 
 Evaluating a function or expression in list context apart from assignment can
 occasionally produce confusion.  Remember that argument lists and lists
-themselves -- especially lists used in hash initializers -- propogate list
+themselves -- especially lists used in hash initializers -- propagate list
 context to the expressions they contain.  Thus both of these calls to
 C<some_expensive_operation()> are in list context, even if it's not immediately
 obvious:

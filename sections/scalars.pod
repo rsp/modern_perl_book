@@ -83,9 +83,15 @@ C<$call_sign-->.
 =end sidebar
 
 Magical string increment turns C<a> into C<b> and C<z> into C<aa>, respecting
-character set and case.  Note that C<ZZ9> becomes C<ZZ0> and C<ZZ09> becomes
-C<ZZ10>, however -- numbers wrap around but do not carry to alphabetic
-components.
+character set and case.  Note that C<ZZ9> becomes C<AAA0> and C<ZZ09> becomes
+C<ZZ10>.
+
+=for author
+
+"however -- numbers wrap around but do not carry to alphabetic
+components." -- ???
+
+=end for
 
 X<stringification>
 X<numification>

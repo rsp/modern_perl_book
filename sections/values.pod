@@ -47,11 +47,11 @@ example shows single quotes and double quotes.
 X<strings; single-quoted>
 
 Characters in a I<single-quoted string> represent themselves literally, with
-one exception.  You may embed a single quote inside a single-quoted string by escaping the quote with a leading backlash:
+two exceptions.  You may embed a single quote or a literal backslash inside a single-quoted string by escaping the quote with a leading backlash:
 
 =begin programlisting
 
-    my $reminder = 'DonB<\'>t forget to escape the single quote!';
+    my $reminder = 'DonB<\'>t forget to escape the single quote: \\\'';
 
 =end programlisting
 
@@ -231,8 +231,8 @@ X<Scalar::Util; looks_like_number>
 
 Occasionally it's useful to determine whether Perl 5 will consider something
 that looks like a number as a number.  The core module C<Scalar::Util> contains
-a function named C<looks_like_number> which returns true Perl will consider the
-given argument numeric.
+a function named C<looks_like_number> which returns true if Perl will consider
+the given argument numeric.
 
 X<Regexp::Common>
 
