@@ -1,6 +1,6 @@
 =head3 Scope
 
-Z<scope>
+Z<scoping>
 
 X<scope>
 X<encapsulation>
